@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to JSON - EXCSJSON</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header" style="padding: 2rem 0 1rem;">
+            <a href="../index.html" class="nav-back">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                Kembali ke Beranda
+            </a>
+            <h1 class="header-title">Konversi CSV ke JSON</h1>
+            <p class="header-desc">Unggah satu atau banyak file .csv. Hasil akan diformat sebagai Array of Objects.</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Upload Area -->
+            <div id="dropzone" class="dropzone">
+                <svg class="dropzone-icon" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg>
+                <div class="dropzone-text">Seret & Jatuhkan file CSV di sini</div>
+                <div class="dropzone-hint">Bisa memilih banyak file sekaligus (Multiple)</div>
+                <input type="file" id="fileInput" accept=".csv" multiple>
+            </div>
+
+            <!-- Results Area -->
+            <div id="results" class="results-container">
+                <div class="results-header">
+                    <h2>Hasil Konversi (<span id="fileCount">0</span> File)</h2>
+                    <button id="downloadAllBtn" class="btn btn-primary" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        Download Semua (ZIP)
+                    </button>
+                </div>
+                <div id="fileList" class="file-list">
+                    <!-- File items and JSON preview will be inserted here dynamically -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+        <div class="loader-text">Memproses file CSV...</div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Libraries -->
+    <script src="../vendor/jszip.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="../js/utils.js" type="module"></script>
+    <script src="../js/ui.js" type="module"></script>
+    <script src="../js/download.js" type="module"></script>
+    <script src="../js/csv.js" type="module"></script>
+</body>
+</html>

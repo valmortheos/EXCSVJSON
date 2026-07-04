@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCSJSON - Converter Excel, CSV, JSON</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <meta name="description" content="Konversi Excel ke CSV dan CSV ke JSON 100% di browser secara lokal.">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="header-brand">
+                <img src="./assets/icons/logo.svg" alt="EXCSJSON Logo" width="40" height="40">
+                <span class="header-title">EXCSJSON</span>
+            </a>
+            <p class="header-desc">Konversi file Excel ↔ CSV ↔ JSON cepat, aman, dan 100% luring (offline).</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card-grid">
+                <!-- Excel to CSV Card -->
+                <a href="./pages/excel-to-csv.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                    </svg>
+                    <h2 class="card-title">Excel → CSV</h2>
+                    <p class="card-desc">Ekstrak seluruh sheet dari file Excel (.xlsx, .xls) Anda menjadi beberapa file CSV secara instan.</p>
+                    <span class="btn btn-primary">Buka Konverter</span>
+                </a>
+
+                <!-- CSV to JSON Card -->
+                <a href="./pages/csv-to-json.html" class="card">
+                    <svg class="card-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+                    </svg>
+                    <h2 class="card-title">CSV → JSON</h2>
+                    <p class="card-desc">Ubah satu atau banyak file CSV menjadi format JSON Array of Objects dengan mudah.</p>
+                    <span class="btn btn-primary">Buka Konverter</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; <span id="year"></span> EXCSJSON. Dibuat 100% sisi klien. Tidak ada data yang dikirim ke server.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

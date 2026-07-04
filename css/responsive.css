@@ -1,0 +1,52 @@
+/* Tablet and Up */
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .header-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* Desktop and Up */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+  
+  .dropzone {
+    padding: 5rem 2rem;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .file-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .file-item-header .btn {
+    width: 100%;
+  }
+  
+  .results-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .results-header .btn {
+    width: 100%;
+  }
+  
+  .toast-container {
+    bottom: var(--spacing-sm);
+    right: var(--spacing-sm);
+    left: var(--spacing-sm);
+  }
+  
+  .toast {
+    width: 100%;
+  }
+}
